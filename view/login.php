@@ -12,13 +12,12 @@
     <style>
         body{
             color: beige;
-            background-color: #004911;
-            /* background-image: url("../src/assets/bgbody.jpg"); */
+            background-image: url("../src/assets/bgbody.jpg");
             background-repeat: no-repeat, repeat;
             background-size: cover;
         }
         .box{
-            
+            background-color: #004911;
             padding: 20px;
             margin-top: 200px;
             width: 60%;
@@ -27,7 +26,7 @@
             border-radius: 5px;
         }
         .box form button{
-            background-color: #004911;
+            background-color: white;
         }
         .box form div p a{
             color: #28a745;

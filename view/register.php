@@ -20,7 +20,7 @@
         .box{
             background-color: #004911;
             padding: 20px;
-            margin-top: 200px;
+            margin-top: 180px;
             width: 60%;
             margin-left: auto;
             margin-right: auto;
@@ -32,6 +32,10 @@
         .box form div p a{
             color: #28a745;
         }
+        .alert-danger{
+            background-color: #ba2330;
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -39,6 +43,9 @@
         <div class="container">
             <div class="box">
                 <h4 class="text-center">REGISTER</h4>
+                <div class="alert" >
+
+                </div>
                 <form method="post">
                     <div class="form-group">
                         <label for="username">Username</label>
@@ -89,7 +96,15 @@
                     password : password
                 },
                 success : function(data){
-                    alert(data)
+                    // alert(data)
+                    if(data == 'success'){
+                        window.location.replace("login.php");
+                    } else {
+                        let alert = `<div class="alert alert-danger" role="alert" > Gagal register
+                    
+                    </div>  `;
+                        $('.alert').html(alert)
+                    }
                 }
             })
         })
