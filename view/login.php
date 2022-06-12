@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +13,17 @@
 </head>
 <body>
     <div class="alert" >
+        <?php
 
+            if(isset($_POST['status']) && $_POST['status'] == 'success'){ ?>
+                sukses
+            <?php }
+
+        ?>
     </div>
     <form action="" method="post">
 
-        <input type="text" id="username" name="username" placeholder="masukan email">
+        <input type="email" id="email" name="email" placeholder="masukan email">
         <input type="password" id="password" name="password" placeholder="masukan password">
 
         <button id="login" >Login</button>
@@ -27,14 +34,14 @@
     <script>
         $('#login').click(function(e){
             e.preventDefault()
-            let username = $('#username').val();
+            let email = $('#email').val();
             let password = $('#password').val();
 
             $.ajax({
                 method : 'post',
                 url : '../action/proses.php',
                 data : {
-                    username : username,
+                    email : email,
                     password : password
                 },
                 success : function(data, status){

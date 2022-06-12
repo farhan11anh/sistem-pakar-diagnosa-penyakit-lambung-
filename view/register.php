@@ -35,7 +35,16 @@
                     password : password
                 },
                 success : function(data){
-                    alert(data)
+                    if(data == 'success'){
+                        $.ajax({
+                            url : 'login.php',
+                            method : 'post',
+                            data : {status : success},
+                            success : function(){
+                                window.location.replace("login.php");
+                            }
+                        })
+                    }
                 }
             })
         })

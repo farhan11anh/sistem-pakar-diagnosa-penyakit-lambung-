@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['email'])){
     echo '<script>alert("anda harus login terlebih dahulu") </script>';
-    if(!isset($_SESSION['username'])){
+    if(!isset($_SESSION['email'])){
         header('location: login.php');
     }
 }
@@ -20,7 +20,7 @@ if(!isset($_SESSION['username'])){
     <title>Dashboard</title>
 </head>
 <body>
-    <h2>Selamat Datang <?= $_SESSION['username'] ?></h2> <br>
+    <h2>Selamat Datang <?= $_SESSION['email'] ?></h2> <br>
     <a href="../action/logout.php">Logout</a>
 </body>
 </html>
