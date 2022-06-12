@@ -39,7 +39,7 @@
         <div class="container">
             <div class="box">
                 <h4 class="text-center">REGISTER</h4>
-                <form method="post" onsubmit="pushData()">
+                <form method="post">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username"  placeholder="input your username" required>

@@ -12,12 +12,13 @@
     <style>
         body{
             color: beige;
-            background-image: url("../src/assets/bgbody.jpg");
+            background-color: #004911;
+            /* background-image: url("../src/assets/bgbody.jpg"); */
             background-repeat: no-repeat, repeat;
             background-size: cover;
         }
         .box{
-            background-color: #004911;
+            
             padding: 20px;
             margin-top: 200px;
             width: 60%;
@@ -26,10 +27,14 @@
             border-radius: 5px;
         }
         .box form button{
-            background-color: white;
+            background-color: #004911;
         }
         .box form div p a{
             color: #28a745;
+        }
+        .alert-danger{
+            background-color: #ba2330;
+            color: #ffffff;
         }
     </style>
     <title>Login</title>
@@ -38,11 +43,11 @@
     <div>
         <div class="container">
             <div class="box">
-                <div class="alert alert-light" role="alert" >
-                    
-                </div>  
                 <h4 class="text-center">LOGIN</h4>
-                <form method="post" onsubmit="pushData()">
+                <div class="alert" >
+
+                </div>
+                <form method="post">
                     <!-- <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username"  placeholder="input your username" required>
@@ -90,11 +95,14 @@
                     password : password
                 },
                 success : function(data, status){
-                    alert(data);
+                    // alert(data);
                     if(data == 'success'){
                         window.location.replace("index.php");
                     } else {
-                        $('.alert').html('login gagal')
+                        let alert = `<div class="alert alert-danger" role="alert" > Gagal login
+                    
+                    </div>  `;
+                        $('.alert').html(alert)
                     }
                 }
             })
