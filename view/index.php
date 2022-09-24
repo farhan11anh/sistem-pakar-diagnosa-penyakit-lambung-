@@ -21,6 +21,7 @@ if(!isset($_SESSION['email'])){
 </head>
 <body>
     <h2>Selamat Datang <?= $_SESSION['email'] ?></h2> <br>
+    <p><a href="diagnosis.php">Daignosis</a></p>
     <a href="../action/logout.php">Logout</a>
 </body>
 </html>

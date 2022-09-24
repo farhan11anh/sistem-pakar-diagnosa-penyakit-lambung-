@@ -13,12 +13,20 @@ $data = mysqli_query($conn,"select * from user where email='$email' and password
 
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($data);
+$user = mysqli_fetch_array($data);
 
 if($cek > 0){
-	$_SESSION['email'] = $email;
-	$_SESSION['status'] = "login";
+	if($user['role'] == 1){
+		$_SESSION['username'] = $user['username'];
+		echo 'successA';
+	}else{
+		$_SESSION['email'] = $email;
+		$_SESSION['status'] = "login";
+		$_SESSION['id_user'] = $user['user_id'];
+		$_SESSION['username'] = $user['username'];
+		echo 'success';
+	}
 
-	echo 'success';
 }else{
 	echo 'failed';
 }
